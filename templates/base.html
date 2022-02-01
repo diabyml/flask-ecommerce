@@ -1,0 +1,25 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Dambeshop</title>
+  </head>
+  <body class="min-h-screen flex flex-col bg-slate-100">
+    <header class="bg-white py-2 px-4 shadow-md">
+      <!-- Header -->
+      <div class="container mx-auto">
+        <h1>HEADER</h1>
+      </div>
+    </header>
+    <main class="grow">
+      <!-- main content of the app -->
+      {% block content %}{% endblock %}
+    </main>
+    <footer class="bg-gray-500">
+      <!-- footer -->
+      <h1>FOOTER</h1>
+    </footer>
+  </body>
+</html>
