@@ -1,5 +1,111 @@
 {% extends "base.html" %} {% block content %}
-<div>
-  <h1 class="text-lg text-indigo-500 font-bold">Hello,world!</h1>
+<div class="container mx-auto">
+  <a href="/admin" class="text-indigo-500">ADMIN</a>
+
+  <!-- list of mens products -->
+  <div>
+    <div class="flex justify-between">
+      <h2>Hommes</h2>
+      <a href="/products/{{categories['hommes']}}" class="text-blue-500"
+        >Voir plus</a
+      >
+    </div>
+    <div>
+      {% for p in data['hommes'] %}
+      <div>
+        <a href="/product/{{ p['id'] }}">
+          <div>
+            <img
+              src="{{ url_for('display_image', filename=p['unique_filename']) }}"
+              alt=""
+            />
+            <p>{{p['name']}}</p>
+            <p>{{p['price']}}</p>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- list of womens products -->
+  <div>
+    <div class="flex justify-between">
+      <h2>Femmes</h2>
+      <a href="/products/{{categories['femmes']}}" class="text-blue-500"
+        >Voir plus</a
+      >
+    </div>
+    <div>
+      {% for p in data['femmes'] %}
+      <div>
+        <a href="/product/{{ p['id'] }}">
+          <div>
+            <img
+              src="{{ url_for('display_image', filename=p['unique_filename']) }}"
+              alt=""
+            />
+            <p>{{p['name']}}</p>
+            <p>{{p['price']}}</p>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- list of arts products -->
+  <div>
+    <div class="flex justify-between">
+      <h2>Arts</h2>
+      <a href="/products/{{categories['arts']}}" class="text-blue-500"
+        >Voir plus</a
+      >
+    </div>
+    <div>
+      {% for p in data['arts'] %}
+      <div>
+        <a href="/product/{{ p['id'] }}">
+          <div>
+            <img
+              src="{{ url_for('display_image', filename=p['unique_filename']) }}"
+              alt=""
+            />
+            <p>{{p['name']}}</p>
+            <p>{{p['price']}}</p>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- list of divers products -->
+  <div>
+    <div class="flex justify-between">
+      <h2>Divers</h2>
+      <a href="/products/{{categories['divers']}}" class="text-blue-500"
+        >Voir plus</a
+      >
+    </div>
+    <div>
+      {% for p in data['divers'] %}
+      <div>
+        <a href="/product/{{ p['id'] }}">
+          <div>
+            <img
+              src="{{ url_for('display_image', filename=p['unique_filename']) }}"
+              alt=""
+            />
+            <p>{{p['name']}}</p>
+            <p>{{p['price']}}</p>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- end container -->
 </div>
 {% endblock %}

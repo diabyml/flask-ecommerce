@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block content %}
+<div class="container mx-auto">
+  <h1>{{ category_title }}</h1>
+
+  <div>
+    {% for p in products %}
+    <div>
+      <a href="/product/{{ p['id'] }}">
+        <div>
+          <img
+            src="{{ url_for('display_image', filename=p['unique_filename']) }}"
+            alt=""
+          />
+          <p>{{p['name']}}</p>
+          <p>{{p['price']}}</p>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
