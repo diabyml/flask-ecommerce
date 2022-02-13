@@ -41,6 +41,7 @@ def category(category_title):
     return render_template('category-list.html',category_title=category_title,products=products)
 
 
+
 @app.route('/product/<product_id>')
 def product(product_id):
     product = get_product_detail(db,product_id)
